@@ -21,7 +21,7 @@ http://codeberg.org/cdsoft/ldc
 local F = require "F"
 local sys = require "sys"
 
-version "1.0"
+version "1.0.1"
 
 help.name "LDC"
 help.description "Lua Data Compiler"

@@ -6,6 +6,14 @@ and produces source code in various languages.
 Note: `ldc` is a fork of [lcc](https://gitlab.com/CDSoft/lcc).
 It adds immutability for a better modularity and reusability.
 
+# Releases
+
+It is strongly recommended to build Ldc from source,
+as this is the only reliable way to install the exact version you need.
+
+However, if you do require precompiled binaries,
+this page offers a selection for various platforms: <https://cdelord.fr/pub>.
+
 # Pricing
 
 LDC is a free and open source software.
