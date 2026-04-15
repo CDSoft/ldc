@@ -3,7 +3,7 @@ const struct t_tests_structs
     TESTS_STRUCTS =
         {
             .flat_array = {[0] = 10, [1] = 20, [2] = 30, [3] = 40},
-            .flat_structure = {.field1 = 42, .field2 = "fourty two", .field3 = true, .field4 = 3.1415926535898},
+            .flat_structure = {.field1 = 42, .field2 = "fourty two", .field3 = true, .field4 = 3.1415926535897931},
             .mega_struct =
                 {
                     .field_01 = 42,
@@ -67,9 +67,9 @@ const struct t_tests_structs
                                             [0] =
                                                 {
                                                     .arr = {[0] = "cd", [1] = "efg"},
-                                                    .z = 3.1415926535898,
+                                                    .z = 3.1415926535897931,
                                                 },
-                                            [1] = {.z = 1.5707963267949},
+                                            [1] = {.z = 1.5707963267948966},
                                         },
                                 },
                             [2] =

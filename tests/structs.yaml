@@ -9,7 +9,7 @@ tests_structs:
     field1: 42
     field2: "fourty two"
     field3: true
-    field4: 3.1415926535898
+    field4: 3.1415926535897931
   mega_struct:
     field_01: 42
     field_02:
@@ -67,8 +67,8 @@ tests_structs:
           - arr:
               - "cd"
               - "efg"
-            z: 3.1415926535898
-          - z: 1.5707963267949
+            z: 3.1415926535897931
+          - z: 1.5707963267948966
       -
         -
           - s: ""

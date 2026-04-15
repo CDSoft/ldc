@@ -49,7 +49,7 @@ data TestsStructs = TestsStructs
 testsStructs :: TestsStructs
 testsStructs = TestsStructs
     { flatArray' = [10, 20, 30, 40]
-    , flatStructure' = TestsStructsFlatStructure {flatStructureField1' = 42, flatStructureField2' = "fourty two", flatStructureField3' = True, flatStructureField4' = 3.1415926535898}
+    , flatStructure' = TestsStructsFlatStructure {flatStructureField1' = 42, flatStructureField2' = "fourty two", flatStructureField3' = True, flatStructureField4' = 3.1415926535897931}
     , megaStruct' = TestsStructsMegaStruct
         { megaStructField01' = 42
         , megaStructField02' = TestsStructsMegaStructField02 {megaStructField02X' = 0, megaStructField02Y' = 1}
@@ -120,9 +120,9 @@ testsStructs = TestsStructs
                         , megaStructField06T' = False
                         , megaStructField06X' = 0
                         , megaStructField06Y' = ""
-                        , megaStructField06Z' = 3.1415926535898
+                        , megaStructField06Z' = 3.1415926535897931
                         }
-                    , TestsStructsMegaStructField06 {megaStructField06Arr' = [], megaStructField06S' = "", megaStructField06S2' = "", megaStructField06St' = TestsStructsMegaStructField06St {megaStructField06StA' = 0, megaStructField06StB' = 0}, megaStructField06T' = False, megaStructField06X' = 0, megaStructField06Y' = "", megaStructField06Z' = 1.5707963267949}
+                    , TestsStructsMegaStructField06 {megaStructField06Arr' = [], megaStructField06S' = "", megaStructField06S2' = "", megaStructField06St' = TestsStructsMegaStructField06St {megaStructField06StA' = 0, megaStructField06StB' = 0}, megaStructField06T' = False, megaStructField06X' = 0, megaStructField06Y' = "", megaStructField06Z' = 1.5707963267948966}
                     ]
                 ]
             ,

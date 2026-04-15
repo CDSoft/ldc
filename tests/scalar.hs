@@ -53,7 +53,7 @@ testsScalar = TestsScalar
     , b3' = -9223372036854775805
     , b4' = -9223372036854775804
     , boolean' = TestsScalarBoolean {booleanF' = False, booleanT' = True}
-    , floats' = TestsScalarFloats {floatsF1' = 0.0, floatsF2' = 1.0, floatsF3' = 3.1, floatsF4' = 3.1415926535898}
+    , floats' = TestsScalarFloats {floatsF1' = 0.0, floatsF2' = 1.0, floatsF3' = 3.1, floatsF4' = 3.1415926535897931}
     , neg' = TestsScalarNeg {negA' = -128, negB' = -32768, negC' = -2147483648, negD' = -9223372036854775808}
     , pos' = TestsScalarPos {posA' = 0, posB' = 128, posC' = 256, posD' = 32768, posE' = 65536, posF' = 2147483648, posG' = 4294967296, posH' = 8589934592}
     , strings' = TestsScalarStrings {stringsS1' = "", stringsS2' = "hello", stringsS3' = "hello world!"}

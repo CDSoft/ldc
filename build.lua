@@ -21,7 +21,7 @@ http://codeberg.org/cdsoft/ldc
 local F = require "F"
 local sys = require "sys"
 
-version "1.0.2"
+version "1.0.3"
 
 help.name "LDC"
 help.description "Lua Data Compiler"
@@ -68,7 +68,7 @@ phony "release" {
         name = "ldc-${version}-lua",
         build.luax.lua("$builddir/release/.build/ldc-${version}-lua/bin/ldc.lua") { sources },
     },
-    require "targets" : map(function(target)
+    require "luax-targets" : map(function(target)
         return build.tar("$builddir/release/${version}/ldc-${version}-"..target.name..".tar.gz") {
             base = "$builddir/release/.build",
             name = "ldc-${version}-"..target.name,
@@ -141,7 +141,10 @@ rule "diff" {
 ls "tests/*.lua"
 : foreach(function(test)
 
-    F{"lua", "luax"} : foreach(function(interpreter)
+    F{
+        --"lua",    -- does not work with Lua 5.4 because of lower float precision (waiting for Lua 5.5)
+        "luax"      -- LuaX is based on Lua 5.5
+    } : foreach(function(interpreter)
 
         local out = "$builddir"/"test-"..interpreter/test:basename():splitext()
         local name = out:basename()
