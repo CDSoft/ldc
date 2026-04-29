@@ -21,7 +21,7 @@ http://codeberg.org/cdsoft/ldc
 local F = require "F"
 local sys = require "sys"
 
-version "1.0.3"
+version "1.0.4"
 
 help.name "LDC"
 help.description "Lua Data Compiler"
@@ -63,16 +63,26 @@ default(binaries)
 install "bin" { binaries }
 
 phony "release" {
-    build.tar "$builddir/release/${version}/ldc-${version}-lua.tar.gz" {
-        base = "$builddir/release/.build",
-        name = "ldc-${version}-lua",
-        build.luax.lua("$builddir/release/.build/ldc-${version}-lua/bin/ldc.lua") { sources },
-    },
+    (function()
+        local script = build.luax.lua("$builddir/release/.build/ldc-${version}-lua/bin/ldc.lua") { sources }
+        return {
+            build.tar "$builddir/release/${version}/ldc-${version}-lua.tar.gz" {
+                base = "$builddir/release/.build",
+                name = "ldc-${version}-lua",
+                script,
+            },
+            build.cp "$builddir/release/${version}/ldc.lua" { script },
+        }
+    end)(),
     require "luax-targets" : map(function(target)
-        return build.tar("$builddir/release/${version}/ldc-${version}-"..target.name..".tar.gz") {
-            base = "$builddir/release/.build",
-            name = "ldc-${version}-"..target.name,
-            build.luax[target.name]("$builddir/release/.build/ldc-${version}-"..target.name/"bin/ldc") { sources },
+        local exe = build.luax[target.name]("$builddir/release/.build/ldc-${version}-"..target.name/"bin/ldc") { sources }
+        return {
+            build.tar("$builddir/release/${version}/ldc-${version}-"..target.name..".tar.gz") {
+                base = "$builddir/release/.build",
+                name = "ldc-${version}-"..target.name,
+                exe,
+            },
+            build.cp("$builddir/release/${version}/ldc-"..target.name..target.exe) { exe }
         }
     end),
 }
